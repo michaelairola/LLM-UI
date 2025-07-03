@@ -1,2 +1,207 @@
-<h1>Chats#show</h1>
-<p>Find me in app/views/chats/show.html.erb</p>
+<body class="" style="overflow: visible;">
+    <div id="__next">
+       <div class="d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-center theme-border-bottom px-3">
+             <div class="d-flex gap-3">
+                <div>
+                   <div>
+                      <span id="SidebarIcon">
+                      <i class="bi-layout-sidebar fs-5 cursor-pointer">
+                      </i>
+                      </span>
+                   </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                   <div>
+                      <span id="NewConversationIcon">
+                      <i class="bi-pencil-square fs-5 cursor-pointer">
+                      </i>
+                      </span>
+                   </div>
+                </div>
+             </div>
+             <div class="text-center d-md-block aero-logo flex-grow-1 overflow-hidden">
+                <h5 class="mb-0">
+                   <img height="50" src="/images/AstroLogo_P1_500px.png" alt="astro logo">
+                </h5>
+             </div>
+             <div class="d-flex gap-3 align-items-center position-relative">
+                <div>
+                   <span id="ShareIcon">
+                   <i class="bi bi-box-arrow-up fs-5 theme-text-secondary" style="pointer-events: none;">
+                   </i>
+                   </span>
+                </div>
+                <div class="dropdown">
+                   <span data-toggle="dropdown" aria-haspopup="true" class="cursor-pointer" aria-expanded="false">
+                      <div>
+                         <span id="MoreOptionsIcon">
+                         <i class="bi bi-three-dots fs-5">
+                         </i>
+                         </span>
+                      </div>
+                   </span>
+                   <div tabindex="-1" role="menu" aria-hidden="true" class="shadow-lg dropdown-menu dropdown-menu-end" data-bs-popper="static">
+                      <button type="button" tabindex="0" role="menuitem" class="dropdown-item">
+                         <div class="d-flex align-items-center gap-2 theme-text-color">
+                            <i id="PreferencesIcon" class="bi-sliders fs-5 cursor-pointer">
+                            </i>Preferences
+                         </div>
+                      </button>
+                      <button type="button" tabindex="0" role="menuitem" class="dropdown-item">
+                         <div class="d-flex align-items-center gap-2 theme-text-color">
+                            <i class="bi-people fs-5 cursor-pointer">
+                            </i>Teams Channel
+                         </div>
+                      </button>
+                   </div>
+                </div>
+                <span>
+                   <div class="d-flex align-items-center">
+                      <div>
+                         <span id="user-profile">
+                         <a id="user-profile" target="_blank" rel="noreferrer">
+                         <img height="36" width="36" src="https://media.aero.org/multimedia/AeroPhone/photo/34786.jpg" class="img rounded-circle bg-white" alt="logged in user">
+                         </a>
+                         </span>
+                      </div>
+                   </div>
+                </span>
+             </div>
+          </div>
+          <div class="d-flex">
+             <div class="d-flex flex-column theme-border-end position-relative" style="height: calc(-50px + 100vh); min-width: 200px; width: 325px; max-width: 600px;">
+                <div class="resizer position-absolute top-0 end-0 bottom-0 h-100" style="cursor: col-resize; width: 5px;"></div>
+                <div class="d-flex flex-column h-100">
+                   <div class="p-2">
+                      <input placeholder="Search conversations" type="text" class="shadow-none theme-bg-secondary f-normal py-1 theme-border px-2 theme-text-color form-control">
+                   </div>
+                   <div class="flex-grow-1 overflow-auto">
+                      <div class="h-100">
+                         <div class="d-flex gap-3 justify-content-between mx-1 px-2">
+                            <div class="text-decoration-none rounded px-2 py-1 bg-theme-secondary w-100 theme-bg-secondary">New conversation...</div>
+                         </div>
+                         <div class="fw-bold m-2 px-2 small cursor-pointer d-flex align-items-center">
+                            <i class="bi bi-chevron-down">
+                            </i>
+                            <span class="ms-2">Today
+                            </span>
+                         </div>
+                         <div>
+                            <div class="d-flex gap-3 justify-content-between mx-1 px-2">
+                               <div class="text-truncate flex-grow-1 rounded px-2 py-1 d-flex align-items-center cursor-pointer">I need to put together a briefing for a web application project - the briefing should give a vision of the future appliction, key milestones for the November date, and a brief summary of any available COTS alternatives to a bespoke dashboard solution</div>
+                            </div>
+                         </div>
+                         <div>
+                            <div class="d-flex gap-3 justify-content-between mx-1 px-2">
+                               <div class="text-truncate flex-grow-1 rounded px-2 py-1 d-flex align-items-center cursor-pointer">what does "Relationship Del" mean?</div>
+                            </div>
+                         </div>
+                         <div>
+                            <div class="d-flex gap-3 justify-content-between mx-1 px-2">
+                               <div class="text-truncate flex-grow-1 rounded px-2 py-1 d-flex align-items-center cursor-pointer">in css, when should i use display block vs inline vs flex?</div>
+                            </div>
+                         </div>
+                         <hr class="theme-text-secondary mt-2 mb-2">
+                         <div class="fw-bold m-2 px-2 small cursor-pointer d-flex align-items-center">
+                            <i class="bi bi-chevron-down">
+                            </i>
+                            <span class="ms-2">Yesterday
+                            </span>
+                         </div>
+                         <div>
+                            <div class="d-flex gap-3 justify-content-between mx-1 px-2">
+                               <div class="text-truncate flex-grow-1 rounded px-2 py-1 d-flex align-items-center cursor-pointer">how do I prevent my eyes from being dry while I sleep?</div>
+                            </div>
+                         </div>
+                         <hr class="theme-text-secondary mt-2 mb-2">
+                         <div class="fw-bold m-2 px-2 small cursor-pointer d-flex align-items-center">
+                            <i class="bi bi-chevron-right">
+                            </i>
+                            <span class="ms-2">Older
+                            </span>
+                         </div>
+                         <hr class="theme-text-secondary mt-2 mb-2">
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="d-flex flex-column flex-grow-1 mx-auto" style="height: calc(-50px + 100vh);">
+                <div class="contained my-auto d-flex align-items-center mx-auto">
+                   <div class="mx-2">
+                      <div class="title p-3 d-flex justify-content-center">
+                         <i class="bi bi-lightbulb-fill cursor-pointer text-muted me-2">
+                         </i>
+                         <strong>Examples
+                         </strong>
+                      </div>
+                      <div class="d-flex flex-wrap justify-content-between">
+                         <div class="col-12 col-md-4 d-flex flex-column mb-3">
+                            <div class="theme-bg-secondary rounded px-3 py-2 mx-2 cursor-pointer border-0">"Simplify the concept of a satellite's geostationary orbit for educational outreach purposes."
+                               <i class="bi bi-arrow-right cursor-pointer mx-2">
+                               </i>
+                            </div>
+                         </div>
+                         <div class="col-12 col-md-4 d-flex flex-column mb-3">
+                            <div class="theme-bg-secondary rounded px-3 py-2 mx-2 cursor-pointer border-0">"Generate ideas for a small satellite mission that could provide valuable Earth observation data."
+                               <i class="bi bi-arrow-right cursor-pointer mx-2">
+                               </i>
+                            </div>
+                         </div>
+                         <div class="col-12 col-md-4 d-flex flex-column mb-3">
+                            <div class="theme-bg-secondary rounded px-3 py-2 mx-2 cursor-pointer border-0">"Describe the role of artificial intelligence in predictive maintenance for satellite fleets."
+                               <i class="bi bi-arrow-right cursor-pointer mx-2">
+                               </i>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="mx-2">
+                   <div class="contained mx-auto w-100 rounded py-2 px-3 theme-border theme-bg-secondary">
+                      <div class="d-flex align-items-center mb-2">
+                         <div class="d-flex align-items-center justify-content-center"></div>
+                         <input id="file-attach" type="file" class="d-none">
+                      </div>
+                      <div class="d-flex">
+                         <textarea class="prompt p-0 bg-transparent shadow-none f-normal flex-grow-1 border-0 theme-text-color" id="prompt" maxlength="100000" placeholder="Type a question" style="resize: none; outline: none; height: 24px !important;">
+                         </textarea>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mt-2">
+                         <div>
+                            <span id="file-attach-icon">
+                            <i class="bi-paperclip fs-5 me-2 cursor-pointer theme-text-color" style="cursor: pointer;">
+                            </i>
+                            </span>
+                         </div>
+                         <p class="xsmall theme-text-secondary mb-0">Remaining Characters: 100000</p>
+                         <a class="disabled" style="cursor: default;">
+                            <div>
+                               <span id="sendIcon">
+                               <i class="bi-arrow-right fs-5 theme-text-color-muted">
+                               </i>
+                               </span>
+                            </div>
+                         </a>
+                      </div>
+                   </div>
+                </div>
+                <div class="text-center contained mx-auto w-100 mt-2 xsmall theme-text-secondary">
+                   <div class="mx-2">
+                      <p class="mb-1">Outputs may be inaccurate or misleading, or otherwise reflect content that does not represent Aerospace’s views. Verify important information and abide by the terms of Aerospace's 
+                         <a href="https://nda.aero.org/faces/viewNda.xhtml?num=4270" target="_blank" rel="noopener noreferrer" class="theme-text-secondary">AOAI User Agreement
+                         </a>.
+                      </p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/conversations/[id]","query":{"id":"new"},"buildId":"6APWgxPZ7uNcQtAq8y3e4","runtimeConfig":{"TAG":"20250611_1.5.0-0-g2ab29ff3c75","API_URL":"https://astro.aero.org/api","MATOMO_URL":"https://matomo.app.aero.org","MATOMO_SITE_ID":"178","PROMPT_MAX_LENGTH":"100000","SESSION_TIMEOUT_MINUTES":"20","MAX_FILE_SIZE":"50000000"},"isFallback":false,"isExperimentalCompile":false,"appGip":true,"scriptLoader":[]}</script>
+    <next-route-announcer>
+       <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">ASTRO</p>
+    </next-route-announcer>
+    <textarea tabindex="-1" aria-hidden="true" style="min-height: 0px !important; max-height: none !important; height: 0px !important; visibility: hidden !important; overflow: hidden !important; position: absolute !important; z-index: -1000 !important; top: 0px !important; right: 0px !important; display: block !important; border-width: 0px; box-sizing: border-box; font-family: Inter, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px; font-style: normal; font-weight: 400; letter-spacing: normal; line-height: 24px; padding: 0px; tab-size: 8; text-indent: 0px; text-rendering: auto; text-transform: none; width: 966px; word-break: normal; word-spacing: 0px; scrollbar-gutter: auto;">
+ </textarea>
+ </body>
