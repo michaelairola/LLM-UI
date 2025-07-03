@@ -8,3 +8,32 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+:root {
+  --theme-border-color: lightgrey;
+  --theme-bg-secondary: #f1f0f0;
+  --theme-text-color: #333;
+}
+
+.theme-border-bottom {
+  border-bottom: 1px solid var(--theme-border-color);
+}
+
+.theme-border-end {
+  border-right: 1px solid var(--theme-border-color) !important;
+}
+
+.theme-bg-secondary {
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+.theme-border {
+  border: 1px solid var(--theme-border-color) !important;
+}
+
+.theme-text-color {
+   color: var(--theme-text-color) !important;
+}
+
+.f-normal {
+  font-size: 1rem !important;
+}
