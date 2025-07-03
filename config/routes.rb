@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "/chats/new", to: "chats#new"
+  get "/chats/:id", to: "chats#show"
+
+  get "/chats", to: "chats#index"
+  post "/chats", to: "chats#create"
+  patch "/chats/:id", to: "chats#update"
+  put "/chats/:id", to: "chats#update"
+  delete "/chats/:id", to: "chats#destroy"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -10,5 +18,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "chats#new"
 end
