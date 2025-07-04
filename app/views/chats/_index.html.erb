@@ -10,8 +10,11 @@
                     <% @chats.each do |chat| %>
                         <div class="d-flex gap-3 justify-content-between mx-1 px-2">
                             <div class="text-truncate flex-grow-1 rounded px-2 py-1 d-flex align-items-center cursor-pointer">
-                            <%= chat.name %>
+                            <%= chat.id != @chat.id ? link_to(chat.name, chat) : chat.name %>
                             </div>
+                            <%= chat.id != @chat.id ?
+                                button_to("Del", chat, method: :delete, data: { turbo_confirm: "Are you sure?" }) : nil 
+                            %>
                         </div>
                     <% end %>
                 </div>

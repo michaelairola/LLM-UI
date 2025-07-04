@@ -1,57 +1,66 @@
 class ChatsController < ApplicationController
   include ChatsHelper
+  before_action :set_chat, only: %i[ show update destroy ]
+  before_action :set_chats, only: %i[ show new ]
+  before_action :set_input, only: %i[ create update ]
+  before_action :set_examples, only: %i[ new ]
+  
   def new
     @chat = Chat.new
-    @chats = Chat.where(user: Current.user)
-    @examples = get_chat_examples()
     render :show
   end
   
   def show
-    @chat = Chat.find(params[:id])
-    @chats = Chat.where(user: Current.user).where.not(id: @chat.id)
   end
 
   def create
-    @input = chat_params[:input]
     @chat = Chat.new(name: @input, user: Current.user)
-    @chat.messages = [ 
+    @chat.messages = [
       Message.new(role: Message.roles[:user], value: @input),
       Message.new(role: Message.roles[:assistant], value: "No AI response yet! will set that up next...") 
     ]
-    if @chat.save
-      redirect_to @chat
-    else
-      puts @chat.errors.full_messages
-      @chats = Chat.where(user: Current.user)      
-      @examples = get_chat_examples()
-      render :show, status: :unprocessable_entity
-    end    
+    save_chat
   end
 
   def update
-    @input = chat_params[:input]
-    @chat = Chat.find(params[:id])
+    @chat.touch
     @chat.messages = @chat.messages.concat([ 
       Message.new(role: Message.roles[:user], value: @input),
       Message.new(role: Message.roles[:assistant], value: "No AI response yet! will set that up next...") 
     ])
-    if @chat.save
-      redirect_to @chat
-    else
-      puts @chat.errors.full_messages
-      @chats = Chat.where(user: Current.user)      
-      @examples = get_chat_examples()
-      render :show, status: :unprocessable_entity
-    end
+    save_chat
   end
 
   def destroy
+    @chat.destroy
+    redirect_back_or_to root_path
   end
 
   private
-    def chat_params
-      params.expect(chat: [ :input ])
+    def set_input
+      @input = params.expect(chat: [ :input ])[:input]
     end
-
+    
+    def set_chat
+      @chat = Chat.find(params[:id])
+    end
+    
+    def set_chats
+      @chats = Chat.where(user: Current.user).order("updated_at desc")
+    end    
+    
+    def set_examples
+      @examples = get_chat_examples()
+    end
+    
+    def save_chat 
+      if @chat.save
+        redirect_to @chat
+      else
+        puts @chat.errors.full_messages
+        set_chats
+        set_examples
+        render :show, status: :unprocessable_entity
+      end
+    end
 end
