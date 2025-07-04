@@ -4,12 +4,12 @@ class ChatsController < ApplicationController
   before_action :set_chats, only: %i[ show new ]
   before_action :set_input, only: %i[ create update ]
   before_action :set_examples, only: %i[ new ]
-  
+
   def new
     @chat = Chat.new
     render :show
   end
-  
+
   def show
   end
 
@@ -32,19 +32,19 @@ class ChatsController < ApplicationController
     def set_input
       @input = params.expect(chat: [ :input ])[:input]
     end
-    
+
     def set_chat
       @chat = Chat.find(params[:id])
     end
-    
+
     def set_chats
       @chats = Chat.where(user: Current.user).order("updated_at desc")
-    end    
-    
+    end
+
     def set_examples
       @examples = get_chat_examples()
     end
-    
+
     def save_chat
       @chat.messages << Message.new(role: Message.roles[:user], value: @input)
       ask_question

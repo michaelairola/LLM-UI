@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # It's a hyper text protocol party :)
-gem 'httpparty', '~> 0.2.0'
+gem "httpparty", "~> 0.2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
