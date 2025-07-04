@@ -11,18 +11,17 @@ module ChatsHelper
 
     def ask_question
         server = ENV["OPENAI_SERVER"] || "http://localhost:1234"
-        model = ENV["LLM_MODEL_ID"] || 'hi-tinylama'
-        api_key = ENV["OPENAI_API_KEY"] || nil
+        model = ENV["OPENAI_MODEL_ID"] || 'hi-tinylama'
+        api_key = ENV["OPENAI_API_KEY"] || ""
         temperature = 0
 
-        url = server + "/api/v0/chat/completions"
+        url = server + "/v1/chat/completions"
         body = {
             "model" => model,
             "messages" => @chat.messages.map{
                 |m| { "role" => m.role, "content": m.value }
             },
             "temperature" => temperature,
-            "max_tokens" => -1,
             "stream" => false
         }
         # TODO: add gracefull failure blocks here: begin...
@@ -30,8 +29,10 @@ module ChatsHelper
         res = HTTParty.post(
             url,
             :body=>body.to_json,
-            :headers => {'Content-Type' => 'application/json'}
+            :headers => {'Content-Type' => 'application/json', 'Authorization' => "Bearer #{api_key}"}
         )
+        puts "RESPONSE"
+        puts res.body
         json_resp = hash = JSON.parse(res.body)
         message_data = json_resp['choices'][0]["message"]
         @chat.messages << Message.new(role: message_data["role"], value: message_data["content"])
