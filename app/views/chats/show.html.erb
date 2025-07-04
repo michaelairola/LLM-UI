@@ -18,7 +18,7 @@
          <%= render "index", chats: @chats %>
          <div class="d-flex flex-column flex-grow-1 mx-auto" style="height: calc(-50px + 100vh);">
             <div class="message-list my-auto d-flex align-items-center">
-               <div class="mx-2" style="width: 80%;">
+               <div class="mx-2" style="width: 95%;">
                   <% if @chat.new_record? %>
                      <%= render "examples", examples: @examples %>
                   <% else %>
