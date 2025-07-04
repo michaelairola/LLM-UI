@@ -15,19 +15,11 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.new(name: @input, user: Current.user)
-    @chat.messages = [
-      Message.new(role: Message.roles[:user], value: @input),
-      Message.new(role: Message.roles[:assistant], value: "No AI response yet! will set that up next...") 
-    ]
     save_chat
   end
 
   def update
     @chat.touch
-    @chat.messages = @chat.messages.concat([ 
-      Message.new(role: Message.roles[:user], value: @input),
-      Message.new(role: Message.roles[:assistant], value: "No AI response yet! will set that up next...") 
-    ])
     save_chat
   end
 
@@ -53,7 +45,9 @@ class ChatsController < ApplicationController
       @examples = get_chat_examples()
     end
     
-    def save_chat 
+    def save_chat
+      @chat.messages << Message.new(role: Message.roles[:user], value: @input)
+      ask_question
       if @chat.save
         redirect_to @chat
       else
